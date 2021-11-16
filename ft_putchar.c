@@ -6,12 +6,14 @@
 /*   By: oabushar <oabushar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 01:23:53 by oabushar          #+#    #+#             */
-/*   Updated: 2021/11/15 14:27:03 by oabushar         ###   ########.fr       */
+/*   Updated: 2021/11/16 10:33:48 by oabushar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c, int len)
+#include "ft_printf.h"
+
+void	ft_putchar(char c, t_list *plist)
 {
 	write (1, &c, 1);
-	len++;
+	plist->len++;
 }

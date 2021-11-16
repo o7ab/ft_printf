@@ -6,9 +6,11 @@
 /*   By: oabushar <oabushar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:23:01 by oabushar          #+#    #+#             */
-/*   Updated: 2021/11/15 01:14:42 by oabushar         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:25:52 by oabushar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 char	*ft_strchr(const char *s, int c)
 {

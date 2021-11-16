@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oabushar <oabushar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 12:34:40 by oabushar          #+#    #+#             */
-/*   Updated: 2021/11/16 14:56:23 by oabushar         ###   ########.fr       */
+/*   Created: 2021/10/07 12:03:32 by oabushar          #+#    #+#             */
+/*   Updated: 2021/11/16 15:01:17 by oabushar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n, t_list *plist)
+void	ft_putstr(char *s, t_list *plist)
 {
-	if (n == -2147483648)
+	int	j;
+
+	if (s == NULL)
 	{
-		write(1, "-2147483648", 11);
-		plist->len += 11;
-		return ;
-	}
-	else if (n < 0)
-	{
-		ft_putchar('-', plist);
-		n *= -1;
-	}
-	if (n >= 0 && n <= 9)
-	{
-		ft_putchar(n + 48, plist);
-		return ;
+		write (1, "(null)", 6);
+		plist->len += 6;
+		plist->i++;
 	}
 	else
 	{
-		ft_putnbr(n / 10, plist);
-		ft_putnbr(n % 10, plist);
+		j = ft_strlen(s);
+		write (1, s, j);
+		plist->len += j;
+		plist->i++;
 	}
 }

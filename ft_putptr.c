@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oabushar <oabushar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 12:34:40 by oabushar          #+#    #+#             */
-/*   Updated: 2021/11/16 14:56:23 by oabushar         ###   ########.fr       */
+/*   Created: 2021/11/15 23:12:56 by oabushar          #+#    #+#             */
+/*   Updated: 2021/11/16 15:05:37 by oabushar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n, t_list *plist)
+void	ft_putptr(unsigned long long n, char c, t_list *plist)
 {
-	if (n == -2147483648)
+	char *hex;
+
+	if (!n)
 	{
-		write(1, "-2147483648", 11);
-		plist->len += 11;
 		return ;
-	}
-	else if (n < 0)
-	{
-		ft_putchar('-', plist);
-		n *= -1;
-	}
-	if (n >= 0 && n <= 9)
-	{
-		ft_putchar(n + 48, plist);
-		return ;
+		// write(1, "0x0", 3);
+		// plist->len += 3;
+		// plist->i++;
 	}
 	else
 	{
-		ft_putnbr(n / 10, plist);
-		ft_putnbr(n % 10, plist);
+		write(1, "0x", 2);
+		plist->len += 2;
+		plist->i++;
 	}
+	hex = "0123456789abcdef";
+	if (c == 'X')
+		hex = "0123456789ABCDEF";
+	if (n > 15)
+		ft_puthex(n / 16, c, plist);
+	ft_putchar(hex[n % 16], plist);
 }
