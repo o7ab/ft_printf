@@ -6,13 +6,13 @@
 /*   By: oabushar <oabushar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:23:20 by oabushar          #+#    #+#             */
-/*   Updated: 2021/11/16 12:29:30 by oabushar         ###   ########.fr       */
+/*   Updated: 2021/11/16 21:34:40 by oabushar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_pchar(int c, t_list *plist)
+void	ft_pchar(char c, t_list *plist)
 {
 	ft_putchar(c, plist);
 	plist->i++;

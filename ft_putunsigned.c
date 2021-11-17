@@ -6,7 +6,7 @@
 /*   By: oabushar <oabushar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:09:43 by oabushar          #+#    #+#             */
-/*   Updated: 2021/11/16 12:10:08 by oabushar         ###   ########.fr       */
+/*   Updated: 2021/11/16 21:32:24 by oabushar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	ft_putunsigned(unsigned n, t_list *plist)
 	{
 		ft_putnbr(n / 10, plist);
 		ft_putnbr(n % 10, plist);
+		plist->i++;
 	}
 }

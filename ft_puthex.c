@@ -6,7 +6,7 @@
 /*   By: oabushar <oabushar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:52:59 by oabushar          #+#    #+#             */
-/*   Updated: 2021/11/16 10:57:29 by oabushar         ###   ########.fr       */
+/*   Updated: 2021/11/16 21:32:56 by oabushar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_puthex(unsigned long long n, char c, t_list *plist)
 {
-	char *hex;
+	char	*hex;
 
 	hex = "0123456789abcdef";
 	if (c == 'X')
